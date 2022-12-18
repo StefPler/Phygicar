@@ -1,0 +1,7 @@
+{
+  "name": "Phygital Lifecycle",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

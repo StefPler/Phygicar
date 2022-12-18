@@ -1,0 +1,29 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title class="ion-text-center">Pothole Data</ion-title>
+    <ion-buttons slot="start">
+      <ion-back-button></ion-back-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-item lines="none">
+    <ion-label class="ion-text-center category">Longitude</ion-label>
+    <ion-label class="ion-text-center category">Latitude</ion-label>
+    <ion-label class="ion-text-center category">Size</ion-label>
+
+  </ion-item>
+  <ion-list *ngFor="let item of items">
+    <ion-item>
+      <ion-label class="ion-text-center values">{{item.long}}</ion-label>
+      <ion-label class="ion-text-center values">{{item.lat}}</ion-label>
+      <ion-label class="ion-text-center values">{{item.estimatedSize}}</ion-label>
+    </ion-item>
+  </ion-list>
+</ion-content>
+
+<ion-footer class="ion-no-border">
+  <ion-button shape="round" expand="block"> Share Data</ion-button>
+</ion-footer>

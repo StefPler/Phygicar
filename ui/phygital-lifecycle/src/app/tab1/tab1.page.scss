@@ -1,0 +1,48 @@
+.unlock_btn {
+  margin-bottom: 10%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 95%;
+}
+
+.car_item {
+  // max-height: 250px;
+  padding-top: 10%;
+  width: 95%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.can_scan {
+    width: 95%;
+  padding-top: 5%;
+  // display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.can_scan_card {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+ion-img {
+  // padding: 20%;
+}
+
+.badge_unlocked {
+  background-color: #197e50;
+}
+
+.badge_locked {
+  background-color: #a01e1e;
+}
+
+.locked_icon {
+  padding-top: 2%;
+  transform: scale(1.5);
+  margin-left: auto;
+  margin-right: auto;
+}

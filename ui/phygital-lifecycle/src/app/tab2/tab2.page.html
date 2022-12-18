@@ -1,0 +1,42 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> Car Details </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-segment (ionChange)="segmentChange($event)" value="general" mode="ios">
+    <ion-segment-button value="general">
+      <ion-label>General</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="identifiers">
+      <ion-label>Identifiers</ion-label>
+    </ion-segment-button>
+    <ion-segment-button value="technical">
+      <ion-label>Technical</ion-label>
+    </ion-segment-button>
+  </ion-segment>
+
+  <app-card-list
+    *ngIf="renderSegment.get('general')"
+    title="General"
+    desc="🌼 My marvelous car 🌼"
+    [items]="generalDetails"
+  >
+  </app-card-list>
+
+  <app-card-list
+    *ngIf="renderSegment.get('identifiers')"
+    title="Identifiers"
+    desc="🌸 Just gorgeous 🌸"
+    [items]="identifiers"
+  >
+  </app-card-list>
+  <app-card-list
+  *ngIf="renderSegment.get('technical')"
+  title="Technical"
+  desc="🌺 Majestic 🌺"
+  [items]="technicalDetails"
+>
+</app-card-list>
+</ion-content>

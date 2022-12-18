@@ -1,0 +1,17 @@
+<ion-card mode="ios">
+  <ion-card-header>
+    <ion-card-title class="ion-text-center">{{ title }}</ion-card-title>
+    <ion-card-subtitle class="fabulous ion-text-center">{{ desc }}</ion-card-subtitle>
+  </ion-card-header>
+  <ion-card-content>
+    <ion-list *ngFor="let item of items">
+      <ion-item>
+        <ion-label>
+          <h2>{{ item.property }}</h2>
+          <p class="text-transform-none">{{ item.propertyDetails }}</p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </ion-card-content>
+  <ion-button *ngIf="clickable" shape="round" expand="block" (click)="navigateToPotholes()">View details</ion-button>
+</ion-card>

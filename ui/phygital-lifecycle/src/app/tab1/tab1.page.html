@@ -1,0 +1,43 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> Unlock your car </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <ion-item class="car_item">
+    <ion-img
+      src="assets/redcarvroom.jpg"
+      alt="Oops, your car was supposed to be here"
+    ></ion-img>
+  </ion-item>
+
+  <ion-item mode="ios" lines="none">
+    <ion-checkbox (ionChange)="toggleLock($event)" slot="start"></ion-checkbox>
+    <ion-label>I want to unlock my car with QR code</ion-label>
+  </ion-item>
+
+  <ion-item lines="none" class="can_scan" mode="ios">
+    <ion-card class="can_scan_card">
+      <ion-card-content>
+        <ion-item lines="none">
+          <ion-label>Car can be unlocked </ion-label>
+          <ion-badge *ngIf="canUnlock" slot="end" class="badge_unlocked">yes</ion-badge>
+          <ion-badge *ngIf="!canUnlock" slot="end" class="badge_locked">no</ion-badge>
+        </ion-item>
+      </ion-card-content>
+    </ion-card>
+  </ion-item>
+
+  <ion-item lines="none">
+      <ion-icon *ngIf="!unlock" class="locked_icon" name="lock-closed-outline"></ion-icon>
+      <ion-icon *ngIf="unlock" class="locked_icon" name="lock-open-outline"></ion-icon>
+  </ion-item>
+</ion-content>
+
+<ion-footer class="ion-no-border" mode="ios">
+  <ion-button [disabled]="!canUnlock" class="unlock_btn" shape="round" expand="block" (click)="unlockCar()">
+    <ion-icon slot="start" name="qr-code-outline"></ion-icon>
+    {{btnText}} Car
+  </ion-button>
+</ion-footer>

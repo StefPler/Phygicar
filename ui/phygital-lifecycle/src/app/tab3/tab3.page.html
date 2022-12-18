@@ -1,0 +1,33 @@
+<ion-header [translucent]="true">
+  <ion-toolbar>
+    <ion-title class="ion-text-center"> Extra Features </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content [fullscreen]="true">
+  <app-card-list
+    [clickable]="true"
+    title="Extra"
+    desc="🌼 My ameizi extras🌼"
+    [items]="extraDetails"
+  >
+  </app-card-list>
+
+  <ion-item mode="ios">
+    <ion-label>Insurance</ion-label>
+    <ion-button (click)="displayInsurancePolicy()" shape="round" expand="block"
+      >Connect</ion-button
+    >
+  </ion-item>
+
+  <app-card-list
+    title="Services"
+    desc="History of transactions"
+    [items]="serviceDetails"
+  >
+  </app-card-list>
+  
+  <ion-button shape="round" mode="ios" expand="block" (click)="writeKm()">Add km (demo)</ion-button>
+  <ion-button shape="round" mode="ios" expand="block" (click)="writeServiceLog()">Add Service Log (demo)</ion-button>
+
+</ion-content>
