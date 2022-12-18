@@ -8,15 +8,19 @@ import { DigicarService } from '../services/digicar.service';
   styleUrls: ['tab1.page.scss'],
 })
 export class Tab1Page implements OnInit {
-  btnText: string = "Unlock";
+  btnText: string = 'Unlock';
   canUnlock: boolean = false;
   unlock: boolean = false;
-  constructor(private digicar: DigicarService, private loadingCtrl: LoadingController) {}
+  carImage: string = '';
+  constructor(
+    private digicar: DigicarService,
+    private loadingCtrl: LoadingController
+  ) {}
 
   async toggleLock(event: any) {
     const loading = await this.loadingCtrl.create({
       message: 'Setting lock permissions...',
-    })
+    });
     loading.present();
     await this.digicar.writeLockPerm(!this.canUnlock);
     await this.setLockValue();
@@ -26,10 +30,10 @@ export class Tab1Page implements OnInit {
 
   async unlockCar() {
     this.unlock = !this.unlock;
-    if(this.btnText === "Unlock") {
-      this.btnText = "Lock";
-    }else {
-      this.btnText = "Unlock";
+    if (this.btnText === 'Unlock') {
+      this.btnText = 'Lock';
+    } else {
+      this.btnText = 'Unlock';
     }
   }
 
@@ -38,7 +42,13 @@ export class Tab1Page implements OnInit {
     this.canUnlock = isUnlockable;
   }
 
+  async setImage() {
+    const res = await this.digicar.readCarNft();
+    this.carImage = res?.url;
+  }
+
   ngOnInit(): void {
     this.setLockValue();
+    this.setImage();
   }
 }

@@ -7,13 +7,13 @@
 <ion-content [fullscreen]="true">
   <ion-item class="car_item">
     <ion-img
-      src="assets/redcarvroom.jpg"
+      [src]="carImage"
       alt="Oops, your car was supposed to be here"
     ></ion-img>
   </ion-item>
 
   <ion-item mode="ios" lines="none">
-    <ion-checkbox (ionChange)="toggleLock($event)" slot="start"></ion-checkbox>
+    <ion-checkbox (checked)="canUnlock" (ionChange)="toggleLock($event)" slot="start"></ion-checkbox>
     <ion-label>I want to unlock my car with QR code</ion-label>
   </ion-item>
 

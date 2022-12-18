@@ -38,7 +38,7 @@ export class DigicarService {
       function: 'add_service_log',
       typeArguments: [],
       arguments: [
-        '0xc4984d4b5441951e79a80811a52f20457a9193d4',
+        '0x8a2bc8c2210796d7e7141e7db42c916ee1519399',
         '18/12/2022',
         'myMechanic',
         'yes',
@@ -60,7 +60,7 @@ export class DigicarService {
       module: 'phygicar',
       function: 'mutate_km',
       typeArguments: [],
-      arguments: ['0xc4984d4b5441951e79a80811a52f20457a9193d4', newKM],
+      arguments: ['0x8a2bc8c2210796d7e7141e7db42c916ee1519399', newKM],
       gasBudget: 30000,
     });
   }
@@ -71,7 +71,7 @@ export class DigicarService {
       module: 'phygicar',
       function: 'set_unlockable',
       typeArguments: [],
-      arguments: ['0xc4984d4b5441951e79a80811a52f20457a9193d4', unlockable],
+      arguments: ['0x8a2bc8c2210796d7e7141e7db42c916ee1519399', unlockable],
       gasBudget: 30000,
     });
   }
@@ -90,11 +90,11 @@ export class DigicarService {
       arguments: [
         'Toyota',
         'Celica',
-        1997,
+        2005,
         'SAJWJ0FF3F8321657',
         'Front',
         'Front',
-        'https://i.imgur.com/8TNhJ3i.png',
+        'https://static.amayama.com/amayama2/1644898969370_original.jpg',
         250,
         'Red',
         false,
@@ -104,10 +104,9 @@ export class DigicarService {
   }
 
   public async readCarNft(
-    objectId = '0xc4984d4b5441951e79a80811a52f20457a9193d4'
+    objectId = '0x8a2bc8c2210796d7e7141e7db42c916ee1519399'
   ) {
     const carDetails: any = await this.provider.getObject(objectId);
-    console.log('dets', carDetails);
     return carDetails?.details?.data?.fields;
   }
 }

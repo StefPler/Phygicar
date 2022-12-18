@@ -64,7 +64,7 @@ const extraData = [
 
 const serviceDetails = [
   {
-    property: "Servicadiko o Mpampis",
+    property: "My Mechanic",
     propertyDetails: "Car service 12/12/22 "
   },
   {

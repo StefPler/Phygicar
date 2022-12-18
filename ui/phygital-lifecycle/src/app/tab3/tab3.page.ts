@@ -46,11 +46,9 @@ export class Tab3Page {
 
   async writeKm() {
     const res = await this.digicar.writeKm();
-    console.log('km', res);
   }
 
   async writeServiceLog() {
     const res = await this.digicar.writeServiceLog();
-    console.log('service log', res);
   }
 }
